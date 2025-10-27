@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Play WAV on Click</title>
+</head>
+<body>
+
+  <button onclick="playClickSound()">Play A♯</button>
+
+  <audio id="clickSound" src="sounds/A_sharp.wav" preload="auto"></audio>
+
+  <script>
+    function playClickSound() {
+      const sound = document.getElementById("clickSound");
+      sound.currentTime = 0;
+      sound.play();
+    }
+  </script>
+
+</body>
+</html>

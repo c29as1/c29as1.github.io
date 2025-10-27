@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Click Store Example</title>
+</head>
+<body>
+
+  <button id="myButton">Click Me</button>
+
+  <script>
+    // Variable to store the click state
+    let wasClicked = false;
+
+    // Get the button element
+    const button = document.getElementById('myButton');
+
+    // Add click event listener
+    button.addEventListener('click', () => {
+      wasClicked = true;
+      console.log("Button was clicked:", wasClicked);
+      // You can now use `wasClicked` in your logic
+    });
+  </script>
+
+</body>
+</html>

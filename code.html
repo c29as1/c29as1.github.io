@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+<style type="text/css">
+	.wrectangle {
+      width: 75px;
+      height: 300px;
+      background-color: white;
+      border: 1px solid #ccc;
+    }
+    .brectangle {
+     width: 37.5px;
+     height: 175px;
+     background-color: black;
+     border: 1px solid #ccc;
+ 	}
+</style>
+
+</head>
+<body>
+
+<audio id="C" src="sounds/c3.mp3" preload="auto"></audio>
+<audio id="C_sharp" src="sounds/cs3.mp3" preload="auto"></audio>
+<audio id="D" src="sounds/d3.mp3" preload="auto"></audio>
+<audio id="D_sharp" src="sounds/ds3.mp3" preload="auto"></audio>
+<audio id="E" src="sounds/e3.mp3" preload="auto"></audio>
+<audio id="F" src="sounds/f3.mp3" preload="auto"></audio>
+<audio id="F_sharp" src="sounds/fs3.mp3" preload="auto"></audio>
+<audio id="G" src="sounds/g3.mp3" preload="auto"></audio>
+<audio id="G_sharp" src="sounds/gs3.mp3" preload="auto"></audio>
+<audio id="A" src="sounds/a3.mp3" preload="auto"></audio>
+<audio id="A_sharp" src="sounds/as3.mp3" preload="auto"></audio>
+<audio id="B" src="sounds/b3.mp3" preload="auto"></audio>
+
+<audio id="C4" src="sounds/c4.mp3" preload="auto"></audio>
+<audio id="C4_sharp" src="sounds/cs4.mp3" preload="auto"></audio>
+<audio id="D4" src="sounds/d4.mp3" preload="auto"></audio>
+<audio id="D4_sharp" src="sounds/ds4.mp3" preload="auto"></audio>
+<audio id="E4" src="sounds/e4.mp3" preload="auto"></audio>
+<audio id="F4" src="sounds/f4.mp3" preload="auto"></audio>
+<audio id="F4_sharp" src="sounds/fs4.mp3" preload="auto"></audio>
+<audio id="G4" src="sounds/g4.mp3" preload="auto"></audio>
+<audio id="G4_sharp" src="sounds/gs4.mp3" preload="auto"></audio>
+<audio id="A4" src="sounds/a4.mp3" preload="auto"></audio>
+<audio id="A4_sharp" src="sounds/as4.mp3" preload="auto"></audio>
+<audio id="B4" src="sounds/b4.mp3" preload="auto"></audio>
+
+<audio id="C5" src="sounds/c5.mp3" preload="auto"></audio>
+<audio id="C5_sharp" src="sounds/cs5.mp3" preload="auto"></audio>
+<audio id="D5" src="sounds/d5.mp3" preload="auto"></audio>
+<audio id="D5_sharp" src="sounds/ds5.mp3" preload="auto"></audio>
+<audio id="E5" src="sounds/e5.mp3" preload="auto"></audio>
+<audio id="F5" src="sounds/f5.mp3" preload="auto"></audio>
+<audio id="F5_sharp" src="sounds/fs5.mp3" preload="auto"></audio>
+<audio id="G5" src="sounds/g5.mp3" preload="auto"></audio>
+<audio id="G5_sharp" src="sounds/gs5.mp3" preload="auto"></audio>
+<audio id="A5" src="sounds/a5.mp3" preload="auto"></audio>
+<audio id="A5_sharp" src="sounds/as5.mp3" preload="auto"></audio>
+<audio id="B5" src="sounds/b5.mp3" preload="auto"></audio>
+
+
+  <script>
+
+let wasClicked = false;
+if (wasClicked == true) {
+      message.textContent = "✅ You clicked the button!";
+    }
+// document.addEventListener("keydown", function(event) {
+//   switch (event.key.toLowerCase()) {
+//     case "a":
+//       playA_sharp();
+//       break;
+//     case "s":
+//       playB();
+//       break;
+//     // Add more keys as needed
+//   }
+
+
+
+
+  	function playC() {
+      const sound = document.getElementById("C");
+      sound.currentTime = 0;
+      sound.play();
+      wasClicked = true;
+      console.log("Button was clicked:", wasClicked);
+      // let wasClicked = false;
+    }
+    function playC_sharp() {
+      const sound = document.getElementById("C_sharp");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playD() {
+      const sound = document.getElementById("D");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playD_sharp() {
+      const sound = document.getElementById("D_sharp");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playE() {
+      const sound = document.getElementById("E");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playF() {
+      const sound = document.getElementById("F");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playF_sharp() {
+      const sound = document.getElementById("F_sharp");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playG() {
+      const sound = document.getElementById("G");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playG_sharp() {
+      const sound = document.getElementById("G_sharp");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playA() {
+      const sound = document.getElementById("A");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playA_sharp() {
+      const sound = document.getElementById("A_sharp");
+      sound.currentTime = 0;
+      sound.play();
+    }
+     function playB() {
+      const sound = document.getElementById("B");
+      sound.currentTime = 0;
+      sound.play();
+    }
+
+
+
+
+      	function playC4() {
+      const sound = document.getElementById("C4");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playC4_sharp() {
+      const sound = document.getElementById("C4_sharp");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playD4() {
+      const sound = document.getElementById("D4");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playD4_sharp() {
+      const sound = document.getElementById("D4_sharp");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playE4() {
+      const sound = document.getElementById("E4");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playF4() {
+      const sound = document.getElementById("F4");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playF4_sharp() {
+      const sound = document.getElementById("F4_sharp");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playG4() {
+      const sound = document.getElementById("G4");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playG4_sharp() {
+      const sound = document.getElementById("G4_sharp");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playA4() {
+      const sound = document.getElementById("A4");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playA4_sharp() {
+      const sound = document.getElementById("A4_sharp");
+      sound.currentTime = 0;
+      sound.play();
+    }
+     function playB4() {
+      const sound = document.getElementById("B4");
+      sound.currentTime = 0;
+      sound.play();
+    }
+
+          	function playC5() {
+      const sound = document.getElementById("C5");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playC5_sharp() {
+      const sound = document.getElementById("C5_sharp");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playD5() {
+      const sound = document.getElementById("D5");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playD5_sharp() {
+      const sound = document.getElementById("D5_sharp");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playE5() {
+      const sound = document.getElementById("E5");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playF5() {
+      const sound = document.getElementById("F5");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playF5_sharp() {
+      const sound = document.getElementById("F5_sharp");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playG5() {
+      const sound = document.getElementById("G5");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playG5_sharp() {
+      const sound = document.getElementById("G5_sharp");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playA5() {
+      const sound = document.getElementById("A5");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function playA5_sharp() {
+      const sound = document.getElementById("A5_sharp");
+      sound.currentTime = 0;
+      sound.play();
+    }
+     function playB5() {
+      const sound = document.getElementById("B5");
+      sound.currentTime = 0;
+      sound.play();
+    }
+
+if (wasClicked === True){
+      console.log("Button was clicked!");
+}
+
+
+  </script>
+
+
+  <div class="wrectangle" onclick="playC()"  style="position: absolute; left: 0px; top: 100px;"></div>
+  <div class="wrectangle" onclick="playD()" style="position: absolute; left: 75px; top: 100px;"></div>
+  <div class="wrectangle" onclick="playE()" style="position: absolute; left: 150px; top: 100px;"></div> 
+  <div class="wrectangle" onclick="playF()" style="position: absolute; left: 225px; top: 100px;"></div>
+  <div class="wrectangle" onclick="playG()" style="position: absolute; left: 300px; top: 100px;"></div>
+  <div class="wrectangle" onclick="playA()" style="position: absolute; left: 375px; top: 100px;"></div>
+  <div class="wrectangle" onclick="playB()" style="position: absolute; left: 450px; top: 100px;"></div>
+  <div class="brectangle" onclick="playC_sharp()" style="position: absolute; left: 56.25px; top: 100px;"></div>
+  <div class="brectangle" onclick="playD_sharp()" style="position: absolute; left: 131.25px; top: 100px;"></div>
+  <div class="brectangle" onclick="playF_sharp()" style="position: absolute; left: 281.25px; top: 100px;"></div>
+  <div class="brectangle" onclick="playG_sharp()" style="position: absolute; left: 356.25px; top: 100px;"></div>
+  <div class="brectangle" onclick="playA_sharp()" style="position: absolute; left: 431.25px; top: 100px;"></div>
+
+  <div class="wrectangle" onclick="playC4()" style="position: absolute; left: 525px; top: 100px;"></div>
+  <div class="wrectangle" onclick="playD4()" style="position: absolute; left: 600px; top: 100px;"></div>
+  <div class="wrectangle" onclick="playE4()" style="position: absolute; left: 675px; top: 100px;"></div> 
+  <div class="wrectangle" onclick="playF4()" style="position: absolute; left: 750px; top: 100px;"></div>
+  <div class="wrectangle" onclick="playG4()" style="position: absolute; left: 825px; top: 100px;"></div>
+  <div class="wrectangle" onclick="playA4()" style="position: absolute; left: 900px; top: 100px;"></div>
+  <div class="wrectangle" onclick="playB4()" style="position: absolute; left: 975px; top: 100px;"></div>
+  <div class="brectangle" onclick="playC4_sharp()" style="position: absolute; left: 581.25px; top: 100px;"></div>
+  <div class="brectangle" onclick="playD4_sharp()" style="position: absolute; left: 656.25px; top: 100px;"></div>
+  <div class="brectangle" onclick="playF4_sharp()" style="position: absolute; left: 806.25px; top: 100px;"></div>
+  <div class="brectangle" onclick="playG4_sharp()" style="position: absolute; left: 881.25px; top: 100px;"></div>
+  <div class="brectangle" onclick="playA4_sharp()" style="position: absolute; left: 956.25px; top: 100px;"></div>
+
+   <div class="wrectangle" onclick="playC5()" style="position: absolute; left: 1050px; top: 100px;"></div>
+  <div class="wrectangle" onclick="playD5()" style="position: absolute; left: 1125px; top: 100px;"></div>
+  <div class="wrectangle" onclick="playE5()" style="position: absolute; left: 1200px; top: 100px;"></div>
+  <div class="wrectangle" onclick="playF5()" style="position: absolute; left: 1275px; top: 100px;"></div>
+  <div class="wrectangle" onclick="playG5()" style="position: absolute; left: 1350px; top: 100px;"></div>
+  <div class="wrectangle" onclick="playA5()" style="position: absolute; left: 1425px; top: 100px;"></div>
+  <div class="wrectangle" onclick="playB5()" style="position: absolute; left: 1500px; top: 100px;"></div>
+  <div class="brectangle" onclick="playC5_sharp()" style="position: absolute; left: 1106.25px; top: 100px;"></div>
+  <div class="brectangle" onclick="playD5_sharp()" style="position: absolute; left: 1181.25px; top: 100px;"></div>
+  <div class="brectangle" onclick="playF5_sharp()" style="position: absolute; left: 1331.25px; top: 100px;"></div>
+  <div class="brectangle" onclick="playG5_sharp()" style="position: absolute; left: 1406.25px; top: 100px;"></div>
+  <div class="brectangle" onclick="playA5_sharp()" style="position: absolute; left: 1481.25px; top: 100px;"></div>
+
+
+
+
+</body>
+</html>
