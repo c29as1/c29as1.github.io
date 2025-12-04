@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+	#gif{
+		width: 378px;
+		height:318px;
+		background-image: url(https://i.pinimg.com/originals/1e/e6/17/1ee617f89cec2e319198dd1caa6fea67.gif);
+		background-size: cover;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+	}
+</style>
+</head>
+<body>
+
+<div id="gif"></div>
+
+<script type="text/javascript">
+let counter = 0
+gif.style.left="0px"
+
+document.addEventListener("keypress", function(){
+	console.log("what up i am doug")
+	counter =counter+ 1
+	console.log(counter)
+
+	if (counter>40)
+	{
+		document.body.style.backgroundImage="url(jumpscare.jpeg)"
+		document.body.style.background-size = "cover"
+		document.body.style.background-repeat = "no-repeat"
+
+		counter=0;
+		gif.style.left="0px"
+	}
+
+	else{
+	gif.style.left = parseInt(gif.style.left)+10 +"px"
+	}
+
+})
+
+gif.addEventListener("click", function(){
+	gif.style.backgroundImage="url(jumpscare.jpeg)"
+})
+
+</script>
+
+
+</body>
+</html>
