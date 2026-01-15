@@ -1,0 +1,43 @@
+<html>
+<head>
+<style type="text/css">
+.confetti{
+width: 10px;
+height: 20px;
+position: absolute;
+transition: .2s;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<script type="text/javascript">
+let falling =0
+function makeConfetti(){
+let square= document.createElement(
+"div")
+square.classList.add("confetti")
+document.body.appendChild(square)
+let r=Math.round(Math.random()*255)
+let g=Math.round(Math.random()*255)
+let b=Math.round(Math.random()*255)
+square.style.backgroundColor="rgb("+r+","+g+","+b+")"
+
+square.style.left=Math.random()*2000+"px"
+square.style.top=Math.random()*1000+"px"
+
+function fall(){
+falling=falling+10
+square.style.top=parseInt(square.style.top)+falling+"px"
+}
+setInterval(fall, 100)
+}
+
+setInterval(makeConfetti, 20)
+</script>
+
+</body>
+</html>

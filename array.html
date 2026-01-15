@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+<style type="text/css">
+	#title{
+		font-size: 60px;
+	}
+	#photo {
+      width: 900px;
+      height: 600px;
+      background-color: black;
+      border: 1px solid #ccc;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+</style>
+
+</head>
+<body>
+
+<center>
+	<div id="title">Here's a cool photo</div>
+	<div id="photo"></div>
+</center>
+
+<script type="text/javascript">
+
+	let photos = ["sunset", "tree", "cheatah", "bird", "elephant", "lion1", "lion2", "lion3", "baboon", "monkey1", "monkey2", "llion"]
+
+	document.addEventListener("click", function(){
+		let randomNumber = Math.round(Math.random()*4)
+		console.log(randomNumber)
+		if (randomNumber == 0){ 
+			photo.style.backgroundImage="url(sunset.JPG)"
+		}
+		if (randomNumber == 1){
+			photo.style.backgroundImage="url(tree.JPG)"
+		}
+		if (randomNumber == 2){
+			photo.style.backgroundImage="url(cheatah.JPG)"
+		}
+		if (randomNumber == 3){
+			photo.style.backgroundImage="url(bird.JPG)"
+		}
+		if (randomNumber == 4){
+			photo.style.backgroundImage="url(elephant.JPG)"
+		}
+		
+
+		
+
+		})
+
+	</script>
+
+
+</body>
+</html>
