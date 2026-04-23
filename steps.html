@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.min.js"></script>
+</head>
+<body>
+<script>
+	let xpos
+	let ypos
+
+	function setup(){
+		createCanvas(800,800)
+		background(200)
+		xpos=width/2
+		ypos=height/2
+		noStroke()
+	}
+
+	function draw(){
+		let randomNumber = floor(random(4))
+		let randomColor = random(["#000505","#3B3355","#5D5D81","#BFCDE0","#FEFCFD"])
+		if (randomNumber == 0){
+			xpos = xpos + 8
+		} else if (randomNumber == 1){
+			xpos = xpos - 8
+		} else if (randomNumber == 2) {
+			ypos = ypos + 8
+		} else if (randomNumber == 3){
+			ypos = ypos - 8
+		} 	
+
+		fill(randomColor)
+		circle(xpos, ypos, 10)
+	}
+</script>
+
+</body>
+</html>

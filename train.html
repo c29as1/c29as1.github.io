@@ -62,6 +62,19 @@
 </style>
 
 <script>
+
+	let august = {
+		name: "august",
+		studentId:"c29as1",
+		fav_color: "red",
+		luck_num: 29
+	}
+	let augy = {
+		name: "augy",
+		studentId:"c29az",
+		fav_color: "blue",
+		luck_num: 29
+	}
 	let people = []
 	let train = document.getElementById("train")
 
@@ -71,7 +84,7 @@
 			console.log(people[i])
 
 			let cart = document.createElement("div")
-			cart.textContent = people[i]
+			cart.textContent = people[i].name
 			cart.classList.add("cart")
 			train.appendChild(cart)
 	}
@@ -81,8 +94,14 @@ makeTrain()
 	let addPersonBtn = document.getElementById("add-person")
 	addPersonBtn.addEventListener("click", function() {
 		let personInput = document.getElementById("person")
+		let colorPicker = document.getElementById("colorPicker")
 
-		people.push(personInput.value)
+
+		// people.push(personInput.value)
+		people.push({
+			name: personInput.value,
+			// fav_color: colorPicker.value
+		})
 		console.log(people)
 		makeTrain()
 

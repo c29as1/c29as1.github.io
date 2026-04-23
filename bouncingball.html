@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.min.js"></script>
+</head>
+<body>
+	<script>
+		let x1
+		let y1
+		let x2 = 100
+		let y2 = 100
+		let xspeed = 20
+		let yspeed = 32
+		let x2speed = xspeed
+		let y2speed = yspeed
+		let d1 = 150
+		let d2 = d1
+		function setup(){
+			createCanvas(900,600)
+			x1= width/2
+			y1 = height/2
+		}
+
+		function draw (){
+			 background(200)
+			 if (x1 + d1/2 > width || x1 - d1/2 < 0) {
+			 	xspeed *= -1
+			 }
+			 if (y1 + d1/2 > height || y1 - d1/2 < 0) {
+			 	yspeed *= -1
+			 }
+
+			if (x2 + d2/2 > width || x2 - d2/2 < 0) {
+			 	x2speed *= -1
+			 }
+			if (y2 + d2/2 > height || y2 - d2/2 < 0) {
+			 	y2speed *= -1
+			 }
+
+
+			 if (dist(x1, y1, x2, y2) <= d2) {
+				let tempX = xspeed
+				let tempY = yspeed
+				xspeed = x2speed
+				yspeed = y2speed
+				x2speed = tempX
+				y2speed = tempY
+				d1 -= 20
+
+			}
+
+			 x2 += x2speed
+			 y2 += y2speed
+			 x1 += xspeed
+			 y1 += yspeed
+			 fill("red")
+			 circle(x1,y1,d1)
+			 fill("green")
+			 circle(x2,y2,d2)
+
+			textSize(25)
+
+
+		}
+
+	</script>
+
+</body>
+</html>

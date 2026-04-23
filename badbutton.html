@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+<style>
+#badbutton{
+	position: absolute;
+	transition-duration: 800ms;
+	transition-property: all;
+}
+@keyframes swingd {
+	from{
+		transform: rotate(-180deg) rotateY(-180deg);
+	}
+	to{
+		transform: rotate(180deg) rotateY(180deg);
+
+	}
+}
+</style>
+
+</head>
+<body>
+<button id="badbutton">you can't click me</button>
+<script>
+	let badbutton = document.getElementById("badbutton")
+	console.log(badbutton)
+	badbutton.addEventListener("click", function(){
+		console.log("click!")
+	})
+	badbutton.addEventListener("mouseover", function(){
+		// console.log("over!")
+		badbutton.style.left=Math.random()*1000+"px"
+		badbutton.style.top=Math.random()*700+"px"
+		badbutton.style.transform = "scale(-1,1)"
+		badbutton.style.fontSize = Math.random() * 50 + 10 + "px"
+		let rotation = Math.random() * 180
+		badbutton.style.transform = "rotate(" + rotation + "deg)"
+
+
+
+	})
+	badbutton.addEventListener("mouseout", function(){
+		// console.log("out!")
+		badbutton.style.transform = "scale(1,1)"
+	})
+</script>
+
+</body>
+</html>
