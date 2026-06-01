@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.min.js"></script>
+</head>
+<body>
+<audio id="bounce" src="bounce.mp3" preload="auto"></audio>
+<audio id="fail" src="fail.mp3" preload="auto"></audio>
+<button id="startBtn" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);font-size:24px;padding:16px 48px;z-index:10;cursor:pointer;">▶ Start</button>
+	<script>
+		let gameStarted = false
+		document.getElementById("startBtn").addEventListener("click", function() {
+			gameStarted = true
+			this.style.display = "none"
+		})
+		function setup(){
+			createCanvas(1450,750)
+			x= width/2
+			y = height/2
+		}
+		let x
+		let y
+		let x1= 10
+		let y1 = 200
+		let x2 = 1415
+		let y2 = 200
+		let xspeed = -20
+		let yspeed = -14
+		let y1speed = 20
+		let y2speed = 20
+		let d = 50
+		let h1 = 25
+		let w1 = 200
+		let h2 = 25
+		let w2 = 200
+		let score1 = 0
+		let score2 = 0
+		let colCooldown = 0  // NEW
+		function draw (){
+			if (!gameStarted) return
+			background(200)
+			fill("black")
+			textSize(32)
+			textAlign(CENTER)
+			text(score1 + "  |  " + score2, width/2, 40)
+			if (y + d/2 > height || y - d/2 < 0) {
+				yspeed *= -1
+			}
+			if (x - d/2 > width) {
+				const sound = document.getElementById("fail");
+      			sound.currentTime = 0;
+      			sound.play();
+			    score1++
+			    let xspeed = 20
+			    let yspeed = 20
+			    x = x1 + 200
+			    y = height/2
+			} else if (x + d/2 < 0) {
+				const sound = document.getElementById("fail");
+      			sound.currentTime = 0;
+      			sound.play();
+			    score2++
+			    let xspeed = 20
+			    let yspeed = 20
+			    x = x2 - 200
+			    y = height/2
+			}
+			if (colCooldown > 0) colCooldown--  // NEW
+			if (colCooldown === 0) {  // NEW
+				let overlapX = (h1/2 + d/2) - abs(x - (x1 + h1/2))
+				let overlapY = (w1/2 + d/2) - abs(y - (y1 + w1/2))
+				if (overlapX > 0 && overlapY > 0) {
+					if (overlapX < overlapY) {
+						const sound = document.getElementById("bounce");
+      			sound.currentTime = 0;
+      			sound.play();
+						xspeed *= -1
+						yspeed *= 1
+						console.log(xspeed)
+						x += xspeed > 0 ? overlapX : -overlapX
+					} else {
+						yspeed *= -1
+						y += yspeed > 0 ? overlapY : -overlapY
+					}
+					colCooldown = 8  // NEW
+				}
+				let overlapX2 = (h2/2 + d/2) - abs(x - (x2 + h2/2))
+			    let overlapY2 = (w2/2 + d/2) - abs(y - (y2 + w2/2))
+			    if (overlapX2 > 0 && overlapY2 > 0) {
+			        if (overlapX2 < overlapY2) {
+			        	const sound = document.getElementById("bounce");
+      			sound.currentTime = 0;
+      			sound.play();
+			            xspeed *= -1
+						yspeed *= 1
+						console.log(xspeed)
+			            x += xspeed > 0 ? overlapX2 : -overlapX2
+			        } else {
+			            yspeed *= -1
+			            y += yspeed > 0 ? overlapY2 : -overlapY2
+			        }
+			        colCooldown = 8
+    }
+			}  // NEW
+			x += xspeed
+			y += yspeed
+			noStroke()
+			fill("yellow")
+			circle(x,y,d)
+			fill("red")
+			rect(x1,y1,h1,w1)
+			fill("dodgerblue")
+			rect(x2,y2,h2,w2)
+			if (y1>0){
+				console.log(y1)
+				if (keyIsDown(87)) y1 -= y1speed
+				}
+			if (y1<550){
+				if (keyIsDown(83)) y1 += y1speed}
+			if (y2>0){
+			if (keyIsDown(73))   y2 -= y2speed}
+			if (y2<550){
+			if (keyIsDown(75)) y2 += y2speed}
+		}
+	</script>
+</body>
+</html>
